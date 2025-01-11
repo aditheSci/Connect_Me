@@ -55,17 +55,11 @@ public class PYQsActivity extends AppCompatActivity {
         pyqsData.put("CSE_1_Midsem", Arrays.asList("https://example.com/link1", "https://example.com/link2"));
         pyqsData.put("CSE_1_Endsem", Arrays.asList("https://example.com/link3", "https://example.com/link4"));
         pyqsData.put("ECE_1_Midsem", Arrays.asList("https://example.com/link5", "https://example.com/link6"));
-        pyqsData.put("ECE_2_Endsem", Arrays.asList("https://example.com/link7", "https://example.com/link8"));
-        pyqsData.put("ECE_2_Endsem", Arrays.asList("https://example.com/link7", "https://example.com/link8"));
-        pyqsData.put("CSE_2_Endsem", Arrays.asList("https://example.com/link7", "https://example.com/link8"));
-        pyqsData.put("CSE_2_Endsem", Arrays.asList("https://example.com/link7", "https://example.com/link8"));
-        pyqsData.put("MECH_1_Endsem", Arrays.asList("https://example.com/link7", "https://example.com/link8"));
-        pyqsData.put("MECH_2_Endsem", Arrays.asList("https://example.com/link7", "https://example.com/link8"));
-        pyqsData.put("CSE_2_Midsem", Arrays.asList("https://example.com/link7", "https://example.com/link8"));
+        pyqsData.put("ECE_1_Endsem", Arrays.asList("https://example.com/link7", "https://example.com/link8"));
     }
 
     private void setupSpinners() {
-        String[] branches = {"CSE", "ECE", "MECH"};
+        String[] branches = {"CSE", "ECE"};
         String[] semesters = {"1", "2", "3", "4", "5"};
         String[] examTypes = {"Midsem", "Endsem"};
 

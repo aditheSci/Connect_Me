@@ -73,8 +73,9 @@ public class AcademicsActivity extends AppCompatActivity {
         findViewById(R.id.button12).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AcademicsActivity.this, LecturesActivity.class);
+                Intent intent = new Intent(AcademicsActivity.this, PYQsActivity.class);
                 startActivity(intent);
+
 
             }
         });
@@ -83,7 +84,7 @@ public class AcademicsActivity extends AppCompatActivity {
         findViewById(R.id.button13).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AcademicsActivity.this, PYQsActivity.class);
+                Intent intent = new Intent(AcademicsActivity.this, LecturesActivity.class);
                 startActivity(intent);
 
             }

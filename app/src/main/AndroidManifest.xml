@@ -25,6 +25,9 @@
             android:name=".OtherCollegesActivity"
             android:exported="false" />
         <activity
+            android:name=".AlumsOtherCollsActivity"
+            android:exported="false" />
+        <activity
             android:name=".PYQsActivity"
             android:exported="false" />
         <activity

@@ -2,9 +2,11 @@ package com.example.adi_and_div;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -31,13 +33,18 @@ public class JuniorsActivity extends AppCompatActivity {
         juniors.add(new Student("Rakesh", "Your branch", "A", "xxxxxxxxxxx"));
         juniors.add(new Student("Rakesh", "Your branch", "A", "xxxxxxxxxxx"));
         juniors.add(new Student("Rakesh", "Your branch", "A", "xxxxxxxxxxx"));
-        juniors.add(new Student("Priya", "Your branch", "C", "xxxxxxxxxxx"));
+
 
         // Get the container layout for juniors list
         LinearLayout juniorsListContainer = findViewById(R.id.juniors_list_container);
 
-        // Dynamically add each junior's details to the container
+        // Dynamically add each junior's details and button to the container
         for (Student junior : juniors) {
+            LinearLayout studentLayout = new LinearLayout(this);
+            studentLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+
+            // TextView for student details
             TextView studentView = new TextView(this);
             studentView.setText(String.format(
                     "Name: %s\nBranch: %s\nSec: %s\nContact: %s",
@@ -45,13 +52,20 @@ public class JuniorsActivity extends AppCompatActivity {
             ));
             studentView.setPadding(10, 10, 10, 10);
             studentView.setTextSize(16);
-            studentView.setBackgroundResource(android.R.drawable.dialog_holo_light_frame);
-            studentView.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            ));
-            studentView.setPadding(20, 20, 20, 20);
-            juniorsListContainer.addView(studentView);
+
+            // Button for "Request Connection"
+            Button requestButton = new Button(this);
+            requestButton.setText("Request Connection");
+
+            requestButton.setOnClickListener(v -> {
+                Toast.makeText(this, "Connection request sent to " + junior.getName(), Toast.LENGTH_SHORT).show();
+            });
+
+            studentLayout.addView(studentView);
+            studentLayout.addView(requestButton);
+
+            // Add the student layout to the container
+            juniorsListContainer.addView(studentLayout);
 
             // Add spacing between entries
             TextView spacer = new TextView(this);
